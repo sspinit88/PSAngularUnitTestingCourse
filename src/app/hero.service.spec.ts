@@ -56,7 +56,6 @@ describe('HeroService', () => {
       *  Код идеально подходит для размещения в функции afterEach().
       * */
       httpTestingController.verify();
-
     });
 
   });

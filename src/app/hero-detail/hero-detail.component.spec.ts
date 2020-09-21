@@ -39,7 +39,6 @@ describe('HeroDetailComponent', () => {
     fixture = TestBed.createComponent(HeroDetailComponent);
 
     mockHeroService.getHero.and.returnValue(of({ id: 3, name: 'Super-Man', strength: 100 }));
-
   });
 
   it('should render hero name in a h2 tag', () => {
