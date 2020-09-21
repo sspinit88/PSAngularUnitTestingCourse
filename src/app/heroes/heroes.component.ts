@@ -11,7 +11,10 @@ import { HeroService } from '../hero.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(
+    private heroService: HeroService,
+  ) {
+  }
 
   ngOnInit() {
     this.getHeroes();
@@ -19,13 +22,15 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes);
   }
 
   add(name: string): void {
     name = name.trim();
-    var strength = 11
-    if (!name) { return; }
+    const strength = 11;
+    if (!name) {
+      return;
+    }
     this.heroService.addHero({ name, strength } as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
